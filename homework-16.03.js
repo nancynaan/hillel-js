@@ -21,3 +21,4 @@ console.log("\n");
 
 // 4th
 console.log(("string"+2)/0); //NaN
+console.log(+"string"+2); //NaN
