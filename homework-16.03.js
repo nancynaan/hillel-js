@@ -20,6 +20,4 @@ console.log("\n");
 
 
 // 4th
-console.log("string" * 2);
-console.log("string" / 2);
-console.log("string" % 2);
+console.log(("string"+2)/0); //NaN
