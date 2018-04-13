@@ -16,7 +16,7 @@ function getIndex(userValue) {
             return indexOfValue;
         }
         if (userValue < fibonacciArray[i]) {
-            return ('Error! Not a fibonacci number.'); //not a fibonacci number
+            return ('Error! Not a fibonacci number.'); 
         }
     }
 }
