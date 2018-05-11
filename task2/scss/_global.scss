@@ -1,0 +1,145 @@
+body {
+  @include mainPage;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+
+  &-menu {
+    display: flex;
+  }
+
+  &-image {
+    width: 15.5em;
+  }
+
+  &-logo {
+    width: 5.5em;
+    margin-top: .2em;
+    margin-left: 4.5em;
+  }
+
+  &-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    width: 40%;
+  }
+
+  &-element {
+    margin-right: 2em;
+  }
+
+  &-link {
+    @include linkDecoration;
+
+    &:active, &:hover, &:focus {
+      color: black;
+    }
+    padding: 5px;
+  }
+}
+
+
+.sidebar {
+  &-links {
+    position: absolute;
+    top: 5em;
+    left: 2em;
+  }
+
+  &-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &-element {
+    line-height: 3em;
+  }
+
+  &-link {
+    @include linkDecoration;
+    &:hover, &:active {
+      border: 1px solid red;
+      padding: 10px;
+    }
+  }
+}
+
+#content {
+  padding: 10px 80px;
+}
+
+.footer {
+  display: flex;
+
+  &-links {
+    margin-left: 40%;
+    @media (max-width: 680px) {
+        margin-left: 30%;
+      }
+  }
+
+  &-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    margin: 0;
+  }
+
+  &-element {
+    margin-right: 2em;
+    margin-top: 1em;
+  }
+
+  &-link {
+    color: red;
+    &:active {
+      color: red;
+    }
+    &:hover {
+      color: white;
+    }
+    padding: 5px;
+  }
+}
+
+// Watches
+
+#watches {
+  width: 6em;
+  height: 2.4em;
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+// Window size
+
+#resize {
+  width: 6em;
+  height: 1.3em;
+  position: absolute;
+  top: 3.3em;
+  right: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+}
+
+@media (max-width: 620px) {
+  .table-header {
+    margin-top: 5em;
+  }
+}
+
+
