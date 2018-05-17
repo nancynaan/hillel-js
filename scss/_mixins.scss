@@ -1,0 +1,87 @@
+// Flex
+
+@mixin flexboxIE($direction, $wrap) {
+  display: -ms-flexbox;
+  -ms-flex-direction: $direction;
+  -ms-flex-wrap: $wrap;
+}
+
+// Styles
+@mixin linkDecoration {
+  color: white;
+  font-size: 16px;
+  &:active, &:hover, &:focus {
+    color: red;
+    text-decoration: none;
+  }
+}
+
+// Main
+@mixin mainPage {
+  #wrapper {
+    display: grid;
+    grid-template-areas:
+            "header header"
+            "aside content"
+            "aside footer";
+    grid-template-rows: 60px 1fr 70px;
+    grid-template-columns: 249px 1fr;
+    height: 100.5vh;
+    margin: 0;
+  }
+
+  #header {
+    grid-area: header;
+    background: $headerBackground;
+    border-bottom: 5px solid white;
+  }
+  #footer {
+    grid-area: footer;
+    background: $footerBackground;
+    border-top: 5px solid white;
+  }
+  #content {
+    grid-area: content;
+    background: $contentBackground;
+
+  }
+  #aside {
+    grid-area: aside;
+    background: url("../images/6.jpg");
+    background-size: cover;
+
+    &:before {
+      content: '\0020';
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: .6;
+    }
+  }
+
+  @media (max-width: 760px) {
+    #wrapper {
+      grid-template-areas:
+              "header"
+              "content"
+              "footer";
+      grid-template-rows: 60px 1fr 70px;
+      grid-template-columns: 1fr;
+    }
+
+    #aside {
+      display: none;
+    }
+
+    .header-list {
+      margin-left: 1em;
+    }
+
+    .footer-list {
+      margin-left: 1em;
+      margin-top: 1em;
+    }
+  }
+}
