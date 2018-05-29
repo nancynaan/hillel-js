@@ -1,0 +1,176 @@
+.content {
+  &-heading {
+    color: red;
+  }
+
+  &-portrait {
+    width: 20%;
+    margin-left: 38%;
+  }
+}
+
+.table {
+  min-width: 500px;
+  width: 600px;
+  padding: 1%;
+  margin: 0 auto;
+  @include animatedButton;
+
+  &-description {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: black;
+    position: relative;
+    top: 1.25em;
+    left: -37%;
+    width: 35%;
+    margin: 0;
+  }
+
+  &-header {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+  }
+
+  &-form {
+    width: 35%;
+    margin-left: 14em;
+  }
+}
+.error {
+  border: 1px solid red;
+}
+
+#error {
+  color: red;
+  font-size: 12px;
+  font-family: Verdana, sans-serif;
+  position: relative;
+  top: -1.5em;
+  left: -6.5em;
+}
+
+#newTable {
+  width: 100%;
+  min-height: 30em;
+  height: 100%;
+  margin-top: 2em;
+  border: 1px solid black;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  & tr, td {
+    border: 1px solid black;
+  }
+}
+
+
+
+.td-active {
+  background: red;
+  color: white;
+  text-align: center;
+}
+
+
+// Slider
+#carousel-container{
+  width: 700px;
+  height: 400px;
+  position: relative;
+  margin: 50px auto 0;
+}
+#carousel-container > div:first-child{
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0;
+}
+#carousel{
+  position: relative;
+  width: 9999px;
+  height: 400px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.animate{
+  -webkit-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  -o-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+}
+.slide {
+  list-style: none;
+  position: relative;
+  float: left;
+  transform: translateX(-700px);
+
+    & img {
+    width: 700px;
+      height: 400px;
+  }
+}
+
+#controls{
+  position: relative;
+  width: 100%;
+  top: -14em;
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls span {
+  width: 50px;
+  cursor: pointer;
+  opacity: .6;
+}
+#controls span:hover {
+  opacity: 1;
+}
+
+#prev{
+    & img {
+      width: 50px;
+    }
+}
+
+#next{
+  & img {
+    width: 50px;
+  }
+}
+
+.dots {
+  position: relative;
+  width: 15%;
+  height: 20px;
+  top: -5em;
+  margin: 0 auto;
+
+    &-el {
+      display: block;
+      float: left;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin-left: 5px;
+      background: $contentBackground;
+      opacity: .6;
+    }
+
+    &-current {
+      background: $sliderActiveDot;
+      opacity: 1;
+    }
+}
+
+
+
+
