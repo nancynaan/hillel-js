@@ -1,0 +1,144 @@
+// Flex
+
+@mixin flexboxIE($direction, $wrap) {
+  display: -ms-flexbox;
+  -ms-flex-direction: $direction;
+  -ms-flex-wrap: $wrap;
+}
+
+// Styles
+@mixin linkDecoration {
+  color: white;
+  font-size: 16px;
+  &:active, &:hover, &:focus {
+    color: red;
+    text-decoration: none;
+  }
+}
+
+@mixin animatedButton {
+  &-button {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 5% 62.5%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fe6637;
+    transition: .2s ease-in-out;
+    background: transparent;
+  }
+  &-button:before {
+    content: "";
+    background: linear-gradient(90deg, rgba(255,255,255,.1), rgba(255,255,255,.5));
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+  }
+  &-button:hover {
+    background: #fe6637;
+    color: #fff;
+  }
+}
+
+// Main
+@mixin mainPage {
+  #wrapper {
+    display: grid;
+    grid-template-areas:
+            "header header"
+            "aside content"
+            "aside footer";
+    grid-template-rows: 90px 1fr 70px;
+    grid-template-columns: 249px 1fr;
+    height: 100.5vh;
+    margin: 0;
+  }
+
+  #header {
+    grid-area: header;
+    background: $headerBackground;
+    border-bottom: 5px solid white;
+  }
+  #footer {
+    grid-area: footer;
+    background: $footerBackground;
+    border-top: 5px solid white;
+  }
+  #content {
+    grid-area: content;
+    background: $contentBackground;
+
+  }
+  #aside {
+    grid-area: aside;
+    background: url("../img/6.jpg");
+    background-size: cover;
+
+    &:before {
+      content: '\0020';
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: .6;
+    }
+  }
+
+  @media (max-width: 760px) {
+    #wrapper {
+      grid-template-areas:
+              "header"
+              "content"
+              "footer";
+      grid-template-rows: 80px 1fr 70px;
+      grid-template-columns: 1fr;
+    }
+
+    #aside {
+      display: none;
+    }
+
+    .header-list {
+      margin-left: 1em;
+    }
+
+    .footer-list {
+      margin-left: 1em;
+      margin-top: 1em;
+    }
+  }
+}
+
+@mixin prefixer ($property, $value) {
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -webkit-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin bgIndicator {
+  background: #2e2e2e; /* Old browsers */
+  background: -moz-linear-gradient(top,  #2e2e2e 0%, #8a8a8a 81%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #2e2e2e 0%,#8a8a8a 81%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #2e2e2e 0%,#8a8a8a 81%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#8a8a8a',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin bgProgress {
+  background: #29282a; /* Old browsers */
+  background: -moz-linear-gradient(top,  #29282a -9%, #a50003 15%, #5e0003 56%, #29282a 102%, #29282A 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #29282a -9%, #a50003 15%, #5e0003 56%, #29282a 102%,#29282A 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #29282a -9%, #a50003 15%, #5e0003 56%, #29282a 102%,#29282A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81d1f9', endColorstr='#81d1f9',GradientType=0 ); /* IE6-9 */
+
+}
